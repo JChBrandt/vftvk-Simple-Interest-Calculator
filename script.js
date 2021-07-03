@@ -14,21 +14,28 @@ function compute()
         var years = document.getElementById("years").value;
         // read the rate input and calculate correctly (! in contrast to the instructions) 
         // the interest for the amount of years
-        var interest = principal * Math.pow(1 + rate / 100, 3.5) - principal;
+        var interest = Math.round((principal * Math.pow(1 + rate / 100, years) - principal) * 100)/100;
         // calculate the year the investment ends
         var year = new Date().getFullYear()+parseInt(years);
         // parse the framing text for the output of the result in some variables
-        var text1 = "If you deposit <mark>";
-        var text2 = "</mark>,<br/>at an interest rate of <mark>";
-        var text3 = "%</mark>.<br/>You will receive an amount of <mark>";
-        var text4 = "</mark>,<br/>in the year <mark>";
+        var text1 = "If you deposit ";
+        var text2 = "at an interest rate of ";
+        var text3 = "You will receive an amount of ";
+        var text4 = "in the year ";
         // push the results and text as output to the result element
-        document.getElementById("result").innerText = text1 + principal + text2 + rate + text3 + interest + text4 + year + "</mark>.";
+        document.getElementById("text1").innerText = text1;
+        document.getElementById("result1").innerText = principal; 
+        document.getElementById("text2").innerText = text2; 
+        document.getElementById("result2").innerText = rate + "%"; 
+        document.getElementById("text3").innerText = text3; 
+        document.getElementById("result3").innerText = interest; 
+        document.getElementById("text4").innerText = text4;
+        document.getElementById("result4").innerText = year;
     }
     else
     {
-        alert("Enter a positive number larger than zero for the amount.")
-        document.getElementById("principal").focus()
+        alert("Enter a positive number larger than zero for the amount.");
+        document.getElementById("principal").focus();
     }
     
 }

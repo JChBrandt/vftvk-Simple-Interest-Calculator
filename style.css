@@ -1,13 +1,61 @@
-body {background-color:black;font-family:arial;color:white}
-h1{color:grey;font-family:verdana}
+body {
+	background-color:black;
+	font-family:arial;
+	color:white
+}
+
+h1{
+	color:grey;
+	font-family:verdana;
+	text-align:center
+}
+
+table {
+	padding:20px
+}
+
+td {
+	padding:0px 0px 20px 20px;
+}
+
+p {
+	margin:0 auto;
+	text-align:center
+}
+
+span {
+	text-align:left
+}
 
 .maindiv {
     background-color:white;
     color:black;
-    width:300px;
+    width:500px;
     padding:20px;
     border-radius:25px;
-    align:center
+	margin:0 auto
 }
 
+.seconddiv {
+	padding:20px;
+	width:460px;
+	margin:0 auto
+}
 
+.thebutton {
+    background-color:powderblue;
+    color:black;
+    width:200px;
+    padding:20px;
+    border-radius:15px;
+	margin:0 auto
+}
+
+.textresult {
+    margin:0 40px;
+    text-align:left
+}
+
+.lastrow {
+    padding:0px 0px 0px 20px
+}

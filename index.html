@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<title>Simple Interest Calculator</title>
     </head>
     <body>
-        <title>Simple Interest Calculatortitle</title>
         <div class="maindiv">
-            Amount <input type="number"  id="principal">  <br/>
-            Rate <input type="range"  id="rate">  <br/>
-            <span id="rate_val">10.25 %</span>
-            No. of Years 
+			<h1>Simple Interest Calculator</h1>
+			<div class="seconddiv">
+			<table>
+			<tr>
+			<td>Amount</td>
+			<td><input type="number"  id="principal">  </td>
+			</tr>
+			<tr>
+            <td>Rate</td>
+			<td><input type="range"  id="rate" onchange="updateRate()" value="10.5" min="0" max="20" step="0.25"><span id="rate_val"> 10.5 %</span></td>
+            </tr>
+			<tr>
+			<td class="lastrow">No. of Years</td>
+			<td class="lastrow">
             <select id="years">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -21,14 +31,27 @@
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10">10</option>                                                                
-            </select>  <br/>
-            
-            Interest : <span id="result"></span><br>
-            <button onclick="compute()">Compute Interest</button>
-            <span id="result"></span>
+                <option value="10">10</option>
+            </select>
+			</td>
+			</tr>
+			</table>
+			</div>
+            <p><button class="thebutton" onclick="compute()">Compute Interest</button></p>
+            <div class="seconddiv">
+            <p class="textresult">
+            <span id="text1"></span>
+            <span id="result1"></span><br/>
+            <span id="text2"></span>
+            <span id="result2"></span><br/>
+            <span id="text3"></span>
+            <span id="result3"></span><br/>
+            <span id="text4"></span>
+            <span id="result4"></span>
+			</p>
+			</div>
         </div>
-        <footer>&#169; This calculator belongs to <a href="https://github.com/JChBrandt">JCBrandt</a>. Forked from <a href="https://github.com/ibm-developer-skills-network/vftvk-Simple-Interest-Calculator">this repo</a>.</footer>
-        
+        <footer><div class="seconddiv">&#169; This calculator belongs to <a href="https://github.com/JChBrandt">JCBrandt</a>. Forked from <a href="https://github.com/ibm-developer-skills-network/vftvk-Simple-Interest-Calculator">this repo</a>.</div></footer>
+
     </body>
 </html>
