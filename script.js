@@ -24,13 +24,17 @@ function compute()
         var text4 = "in the year ";
         // push the results and text as output to the result element
         document.getElementById("text1").innerText = text1;
-        document.getElementById("result1").innerText = principal; 
+        document.getElementById("result1").innerText = numberWithCommas(principal); 
+        document.getElementById("result1").style.background = "powderblue";
         document.getElementById("text2").innerText = text2; 
-        document.getElementById("result2").innerText = rate + "%"; 
+        document.getElementById("result2").innerText = rate + "%";
+        document.getElementById("result2").style.background = "powderblue";
         document.getElementById("text3").innerText = text3; 
-        document.getElementById("result3").innerText = interest; 
+        document.getElementById("result3").innerText = numberWithCommas(interest); 
+        document.getElementById("result3").style.background = "powderblue";
         document.getElementById("text4").innerText = text4;
         document.getElementById("result4").innerText = year;
+        document.getElementById("result4").style.background = "powderblue";
     }
     else
     {
@@ -47,4 +51,10 @@ function updateRate()
     var rateval = document.getElementById("rate").value;
     document.getElementById("rate_val").innerText = rateval;
 }
-        
+ 
+// reused code snippet from here: https://stackoverflow.com/a/2901298
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
